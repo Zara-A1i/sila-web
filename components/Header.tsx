@@ -50,7 +50,7 @@ export default function Header() {
       >
         <Link href="/" className="flex-shrink-0">
           <Image
-            src="/assets/Logo.svg"
+            src="/logo.svg"
             alt="SILA Technologies"
             width={120}
             height={28}
