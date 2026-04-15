@@ -44,7 +44,7 @@ export default function ContactFooter() {
 };
 
   return (
-    <section className="h-screen w-full flex flex-col overflow-hidden font-sans">
+    <section className="h-screen w-full flex flex-col font-sans">
 
       {/* TOP */}
       <div className="bg-[rgba(10,186,181,0.5)] flex-1 relative flex flex-col items-center justify-center text-white">

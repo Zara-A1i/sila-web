@@ -2,19 +2,19 @@ import Image from "next/image";
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative min-h-screen w-screen bg-gradient-to-r from-white to-teal-100 overflow-hidden px-6 md:px-16 py-30">
+    <section className="relative min-h-screen w-full bg-gradient-to-r from-white to-teal-100 px-6 md:px-16 py-30">
 
       {/* Content Wrapper */}
       <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         
         {/* Left Content */}
         <div className="z-10 flex flex-col justify-center h-full">
-          <h2 className="text-5xl md:text-5xl font-semibold mb-8 leading-tight text-center">
+          <h2 className="text-4xl md:text-5xl font-semibold mb-8 leading-tight text-center">
             <span className="text-black">Why </span>
             <span className="text-teal-500">Us</span>
           </h2>
 
-          <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl">
+          <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-xl">
             Sila empowers startups and small businesses with innovative digital
             solutions that connect them to the future. By integrating AI-assisted
             technologies, we enhance efficiency and enable smarter business

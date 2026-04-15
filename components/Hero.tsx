@@ -7,12 +7,12 @@ import { MousePatternBackground } from "./MousePatternBackground";
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-screen bg-[#011936] flex flex-col items-center justify-center overflow-x-hidden pt-24 sm:pt-32 px-4 sm:px-8 lg:px-16">
+    <section className="relative w-full min-h-screen bg-[#011936] flex flex-col items-center justify-center pt-24 sm:pt-32 px-4 sm:px-8 lg:px-16">
       <MousePatternBackground />
 
       <div className="w-full max-w-7xl relative flex flex-col lg:flex-row justify-between items-center z-10 py-8 lg:py-20">
         <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 z-10 animate-in fade-in slide-in-from-left-8 duration-700">
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#F4FFFD] leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#F4FFFD] leading-tight">
             Connecting Today to the <br className="hidden sm:block" />
             <span className="text-[#56DFCF]">Future You Imagine.</span>
           </h1>
