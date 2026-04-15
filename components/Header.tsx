@@ -29,25 +29,10 @@ const services = [
 
 export default function Header() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <header className="fixed top-8 left-0 right-0 z-50 flex justify-center px-4">
-      <nav
-        className={`relative w-full max-w-7xl transition-all duration-300 rounded-[40px] px-4 py-2 flex items-center justify-between border border-white/10 ${
-          scrolled
-            ? "bg-[#F4FFFD]/90 backdrop-blur-md shadow-lg"
-            : "bg-[#F4FFFD]"
-        }`}
-      >
+    <header className="absolute top-0 left-0 right-0 z-50 flex justify-center px-4 pt-8">
+      <nav className="relative flex items-center justify-between border-white/10 w-full max-w-7xl rounded-[40px] px-6 py-3 bg-[#F4FFFD] border shadow-sm">
         <Link href="/" className="flex-shrink-0">
           <Image
             src="/logo.svg"

@@ -6,7 +6,7 @@ export default function AboutUs() {
       
       {/* TITLE */}
       <div className="text-center mb-14">
-        <h2 className="text-3xl font-semibold text-gray-900">
+        <h2 className="text-4xl md:text-5xl font-semibold text-gray-900">
           About <span className="text-teal-500">Us</span>
         </h2>
       </div>
@@ -76,7 +76,7 @@ export default function AboutUs() {
 
         {/* TEXT */}
         <div>
-          <p className="text-2xl text-gray-800 leading-relaxed mb-8">
+          <p className="text-lg text-gray-800 leading-relaxed mb-8">
             <span className="text-teal-500 font-semibold">Sila</span> is a
             forward‑thinking company founded by a group of talented founders
             with a shared vision of empowering businesses through innovative

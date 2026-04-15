@@ -1,16 +1,57 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+
+const bitter = localFont({
+  src: [
+    {
+      path: "../public/assets/fonts/Bitter-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/assets/fonts/Bitter-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/assets/fonts/Bitter-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/assets/fonts/Bitter-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-bitter",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const gilmer = localFont({
+  src: [
+    {
+      path: "../public/assets/fonts/Gilmer Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/assets/fonts/Gilmer Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/assets/fonts/Gilmer Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-gilmer",
 });
 
 export const metadata: Metadata = {
@@ -55,9 +96,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={cn("h-full", "antialiased", bitter.variable, gilmer.variable, "font-sans", geist.variable)}
     >
-      <body className="min-h-full flex flex-col bg-[#011936]">
+      <body className="min-h-full flex flex-col bg-[#011936] font-bitter">
         <Header />
         {children}
       </body>
