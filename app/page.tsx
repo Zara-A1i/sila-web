@@ -1,8 +1,8 @@
 import AboutUs from "@/components/AboutUs";
-import ChooseUsSection from "./components/ChooseUsSection";
+import ChooseUsSection from "../components/ChooseUsSection";
 import Hero from "@/components/Hero";
-import ContactFooter from "./components/ContactFooter";
-import ServicesSection from "./components/ServicesSection";
+import ServicesSection from "../components/ServicesSection";
+import ContactFooter from "../components/ContactFooter";
 
 export default function Home() {
   return (

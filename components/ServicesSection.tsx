@@ -105,7 +105,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <section className="w-full bg-[#F4FFFD] py-16 px-6 md:px-16">
+    <section  id="services"className="w-full bg-[#F4FFFD] py-16 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center text-center mb-10">
           <span className="bg-[#B5F1EB] text-[#0ABAB5] px-6 py-1.5 rounded-full text-sm font-medium mb-3">

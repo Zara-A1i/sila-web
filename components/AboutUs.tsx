@@ -1,9 +1,39 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
+
+const slots = [
+  "left-12 top-0 w-[280px] h-[360px] z-20",              // MAIN
+  "right-0 bottom-16 w-[100px] h-[140px]",
+  "left-4 bottom-6 w-[160px] h-[120px]",
+  "right-85 top-0 w-[72px] h-[72px]",
+  "left-45 top-75 w-[120px] h-[100px]",
+];
+
+const images = [
+  { src: "/robbot.jpg", alt: "Robot" },
+  { src: "/finger.jpg", alt: "Finger" },
+  { src: "/rol.jpg", alt: "Rol" },
+  { src: "/3d digital spacce.jpg", alt: "Digital" },
+  { src: "/rop.jpg", alt: "Rop" },
+];
 
 export default function AboutUs() {
+  const [mainIndex, setMainIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setMainIndex((prev) => (prev + 1) % images.length);
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="w-full bg-[linear-gradient(135deg,#D4F0ED_9%,#56DFCF_100%)] py-24 px-6">
-      
+    <section id="AboutUs"
+      className="w-full bg-[linear-gradient(135deg,#D4F0ED_9%,#56DFCF_100%)] py-24 px-6"
+    >
       {/* TITLE */}
       <div className="text-center mb-14">
         <h2 className="text-4xl md:text-5xl font-semibold text-gray-900">
@@ -12,64 +42,29 @@ export default function AboutUs() {
       </div>
 
       <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-
         {/* IMAGE COMPOSITION */}
         <div className="flex justify-center">
           <div className="relative w-[360px] h-[420px]">
 
-            {/* Main */}
-            <div className="absolute left-12 top-0 w-[280px] h-[360px] rounded-3xl overflow-hidden shadow-xl">
-              <Image
-                           src="/robbot.jpg"
-                           alt="Robot"
-                           fill
-                           className="object-cover"
-                         />
-            </div>
+            {images.map((img, i) => {
+              // Rotate slots so each image becomes MAIN in turn
+              const slotIndex =
+                (i - mainIndex + images.length) % images.length;
 
-            {/* Top Left */}
-            <div className="absolute  right-85 top-0 w-[72px] h-[72px] rounded-xl overflow-hidden shadow-lg">
-              <Image
-                           src="/3d digital spacce.jpg"
-                           alt="digital"
-                           width={100}
-                           height={100}
-                           className="rounded-xl object-cover"
-                         />
-            </div>
-
-            {/* Bottom Left */}
-            <div className="absolute left-4 bottom-6 w-[160px] h-[120px] rounded-2xl overflow-hidden ">
-             <Image
-                          src="/rol.jpg"
-                          alt="rol"
-                          width={100}
-                          height={100}
-                          className="rounded-xl object-cover"
-                        />
-            </div>
-
-            {/* Small Circle */}
-            <div className="absolute left-45 top-75  w-[120px] h-[100px] rounded-2x1 overflow-hidden ">
-              <Image
-                          src="/rop.jpg"
-                          alt="rop"
-                          width={100}
-                          height={100}
-                          className="rounded-xl object-cover"
-                        />
-            </div>
-
-            {/* Right Bottom */}
-            <div className="absolute right-0 bottom-16 w-[100px] h-[140px] rounded-2xl overflow-hidden ">
-             <Image
-                          src="/finger.jpg"
-                          alt="Touch"
-                          width={100}
-                          height={100}
-                          className="rounded-xl object-cover"
-                        />
-            </div>
+              return (
+                <div
+                  key={img.src}
+                  className={`absolute transition-all duration-700 ease-in-out overflow-hidden shadow-xl rounded-2xl ${slots[slotIndex]}`}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              );
+            })}
 
           </div>
         </div>
@@ -88,7 +83,6 @@ export default function AboutUs() {
             Learn more →
           </button>
         </div>
-
       </div>
     </section>
   );

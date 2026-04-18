@@ -24,7 +24,7 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4 pt-2 relative z-30">
             <Link
-              href="/contact"
+              href="https://wa.me/252612544819"
               className="group flex items-center justify-center space-x-2 border-2 border-[#56DFCF] text-[#56DFCF] hover:bg-[#56DFCF] hover:text-[#011936] px-8 py-3.5 rounded-full font-bold transition-all text-base bg-[#011936]/50 backdrop-blur-sm"
             >
               <span>Let&apos;s talk</span>
